@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#102a1d" />
+<title>Park Report</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar"><div><p>Warren County Parks</p><h1>Park Report</h1></div><button id="logoutBtn" class="ghost hidden">Logout</button></header>
+<main>
+<section id="loginView" class="card login"><h2>Enter PIN</h2><p class="muted">Use your crew PIN.</p><input id="pinInput" type="password" inputmode="numeric" maxlength="4" placeholder="••••"><button id="loginBtn" class="primary">Open App</button><p id="loginError" class="error"></p><small>John 1111 · Reid 2222 · Tiffany 3333</small></section>
+<section id="homeView" class="hidden"><section class="card row"><div><p class="muted">Signed in as</p><h2 id="userName">Crew</h2><p id="roleLabel" class="muted"></p></div><button id="installBtn" class="secondary hidden">Install</button></section><nav class="tabs"><button class="tab active" data-tab="newReport">New</button><button class="tab" data-tab="reports">Reports</button><button id="adminTab" class="tab hidden" data-tab="admin">Admin</button></nav>
+<section id="newReport" class="panel"><form id="reportForm" class="card"><label>Park<select id="park" required></select></label><label>Category<select id="category"><option>Playground</option><option>Electrical</option><option>Plumbing</option><option>Building</option><option>Grounds</option><option>Athletic Field</option><option>Trash</option><option>Safety Hazard</option><option>Boat Ramp</option><option>Other</option></select></label><label>Priority<select id="priority"><option>Low</option><option selected>Medium</option><option>High</option><option>Emergency</option></select></label><label>Description<textarea id="description" rows="4" required placeholder="What needs fixed?"></textarea></label><label class="photo">Before Photo<input id="photo" type="file" accept="image/*" capture="environment"><img id="photoPreview" class="preview hidden"></label><button class="primary" type="submit">Submit Report</button></form></section>
+<section id="reports" class="panel hidden"><section class="card grid"><input id="searchReports" type="search" placeholder="Search reports"><select id="statusFilter"><option value="all">All</option><option>New</option><option>Assigned</option><option>In Progress</option><option>Completed</option></select></section><div id="reportList"></div></section>
+<section id="admin" class="panel hidden"><section class="card stats"><div><b id="statNew">0</b><span>New</span></div><div><b id="statOpen">0</b><span>Open</span></div><div><b id="statDone">0</b><span>Done</span></div></section><section class="card"><h2>Admin Tools</h2><p class="muted">Update status, complete repairs, and export reports.</p><button id="exportBtn" class="secondary">Export Reports</button><button id="clearDoneBtn" class="danger">Clear Completed</button></section></section></section>
+</main>
+<dialog id="completeDialog"><form method="dialog" id="completeForm" class="dialog"><h2>Complete Repair</h2><p id="completeTitle" class="muted"></p><label>Completion Note<textarea id="completeNote" rows="3"></textarea></label><label class="photo">After Photo<input id="afterPhoto" type="file" accept="image/*" capture="environment"><img id="afterPreview" class="preview hidden"></label><div class="actions"><button value="cancel" class="ghost">Cancel</button><button id="saveCompleteBtn" value="default" class="primary">Save</button></div></form></dialog>
+<script src="app.js"></script>
+</body>
+</html>
