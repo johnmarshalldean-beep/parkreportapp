@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Park Report</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Employee Park Report</h1>
+      <p>Submit maintenance issues with a required photo.</p>
+    </div>
+    <nav>
+      <a class="active" href="index.html">New Report</a>
+      <a href="history.html">History</a>
+      <a href="completed.html">Completed</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>New Park Report</h2>
+      <form id="reportForm">
+        <label for="employeeName">Employee Name</label>
+        <input id="employeeName" type="text" required placeholder="Example: John Dean" />
+
+        <label for="parkName">Park</label>
+        <select id="parkName" required>
+          <option value="">Select a park</option>
+          <option>Fantasy Land</option>
+          <option>Baseball Stadium</option>
+          <option>Dog Park</option>
+          <option>Soccer Complex</option>
+          <option>Skate Park</option>
+          <option>Pool Facility</option>
+          <option>Other</option>
+        </select>
+
+        <label for="priority">Priority</label>
+        <select id="priority" required>
+          <option>Normal</option>
+          <option>High</option>
+          <option>Urgent</option>
+        </select>
+
+        <label for="description">Description</label>
+        <textarea id="description" required placeholder="Describe the issue, location, and what needs done."></textarea>
+
+        <label for="photo">Photo Required</label>
+        <input id="photo" type="file" accept="image/*" required />
+
+        <button type="submit">Submit Report</button>
+      </form>
+      <p id="message" class="message"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

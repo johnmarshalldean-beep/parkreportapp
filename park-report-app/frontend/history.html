@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report History</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Report History</h1>
+      <p>Open maintenance reports.</p>
+    </div>
+    <nav>
+      <a href="index.html">New Report</a>
+      <a class="active" href="history.html">History</a>
+      <a href="completed.html">Completed</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="toolbar card small-card">
+      <input id="searchInput" type="text" placeholder="Search by park, employee, or description" />
+      <select id="priorityFilter">
+        <option value="">All priorities</option>
+        <option>Normal</option>
+        <option>High</option>
+        <option>Urgent</option>
+      </select>
+      <button id="refreshBtn">Refresh</button>
+    </section>
+
+    <section id="historyList" class="grid"></section>
+  </main>
+
+  <script src="history.js"></script>
+</body>
+</html>
