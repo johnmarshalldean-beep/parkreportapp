@@ -1,0 +1,1 @@
+{"name":"Park Report","short_name":"Park Report","description":"Warren County Parks maintenance reporting app","start_url":"./","display":"standalone","background_color":"#07140e","theme_color":"#102a1d","orientation":"portrait","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
